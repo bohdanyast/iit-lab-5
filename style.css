@@ -57,7 +57,7 @@ h1 {
 
 .team-member:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgb(0 0 0 15%);
+    box-shadow: 0 15px 35px rgb(0 0 0 / 15%);
 }
 
 .member-image {
