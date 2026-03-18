@@ -5,7 +5,6 @@
   "id-unique": true,
   "tag-pair": true,
   "alt-require": true,
-  "tag-self-close": true,
   "meta-charset-require": true
 
 }
