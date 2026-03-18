@@ -62,7 +62,7 @@ h1 {
 
 .member-image {
     width: 100%;
-    aspect-ratio: 4 / 6;
+    aspect-ratio: 4 / 4;
     background-color: #e0e0e0;
     display: flex;
     align-items: center;
