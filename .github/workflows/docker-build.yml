@@ -63,6 +63,10 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
+      - name: Terraform Refresh
+        run: terraform apply -refresh-only -auto-approve -input=false
+        continue-on-error: true
+
       - name: Terraform Plan
         run: terraform plan -input=false
 
