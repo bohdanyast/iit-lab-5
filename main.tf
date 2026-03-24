@@ -1,7 +1,7 @@
 # provider and version initiation
 terraform {
     backend "s3" {
-        bucket = "lab6-terraform-backend-bucket-188684347704-eu-north-1-an"
+        bucket = "lab6-terraform-backend-bucket"
         key    = "terraform.tfstate"
         region = "eu-north-1"
     }
