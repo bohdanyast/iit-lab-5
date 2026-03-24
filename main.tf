@@ -47,19 +47,18 @@ resource "aws_instance" "web" {
     vpc_security_group_ids = [aws_security_group.web_sg.id]
     key_name = "Lab4-KeyPair"
 
-    user_data = <<-EOF
-            #!/bin/bash
-            apt update
-            apt install -y docker.io
-            systemctl start docker
-            systemctl enable docker
-            docker run -d -p --restart always 80:80 bodyayast/brigade-3-site-l5:latest
-            docker run -d --restart always \
+user_data = <<-EOF
+          #!/bin/bash
+          apt update
+          apt install -y docker.io
+          systemctl start docker
+          systemctl enable docker
+          docker run -d -p 80:80 --restart always bodyayast/brigade-3-site-l5
+          docker run -d --restart always \
             --name watchtower \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            -e DOCKER_API_VERSION=1.40 \
             containrrr/watchtower --interval 30
-            EOF
+          EOF
 
 
     tags = {
