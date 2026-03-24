@@ -1,11 +1,5 @@
 # provider and version initiation
 terraform {
-    backend "s3" {
-        bucket = "lab6-terraform-backend-bucket-188684347704-eu-north-1-an"
-        key    = "terraform.tfstate"
-        region = "eu-north-1"
-    }
-
     required_providers {
         aws = {
             source = "hashicorp/aws"
@@ -53,7 +47,7 @@ resource "aws_instance" "web" {
     vpc_security_group_ids = [aws_security_group.web_sg.id]
     key_name = "Lab4-KeyPair"
 
-user_data = <<-EOF
+    user_data = <<-EOF
           #!/bin/bash
           apt update
           apt install -y docker.io
